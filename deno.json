@@ -1,0 +1,14 @@
+{
+  "imports": {
+    "@hono/hono": "jsr:@hono/hono@4.6.5",
+    "postgres": "https://deno.land/x/postgresjs@v3.4.4/mod.js"
+  },
+  "deploy": {
+    "project": "bee31362-924c-4fdb-b734-ad4a019785e0",
+    "exclude": [
+      "**/node_modules"
+    ],
+    "include": [],
+    "entrypoint": "app.js"
+  }
+}
