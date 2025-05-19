@@ -15,15 +15,16 @@ const query = async (query) => {
     }
   }
 
-  const sql = postgres({
-    max: 2,
-    max_lifetime: 10,
-    host: "db.ukhjzmuyujpfpyaacjcs.supabase.co",
-    port: 5432,
-    database: "postgres",
-    username: "postgres",
-    password: "Nano2003Esupabas!",
-  });
+const sql = postgres({
+  max: 2,
+  max_lifetime: 10,
+  host: Deno.env.get("PGHOST"),
+  port: Number(Deno.env.get("PGPORT")),
+  database: Deno.env.get("PGDATABASE"),
+  username: Deno.env.get("PGUSER"),
+  password: Deno.env.get("PGPASSWORD"),
+});
+
 
   const result = await sql.unsafe(query);
   return result;
